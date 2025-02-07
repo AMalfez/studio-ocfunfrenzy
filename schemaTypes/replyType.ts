@@ -1,8 +1,8 @@
 import { defineType, defineField } from 'sanity';
 
-export const commentType = defineType({
-  name: 'comment',
-  title: 'Comment',
+export const replyType = defineType({
+  name: 'reply',
+  title: 'Reply',
   type: 'document',
   fields: [
     defineField({
@@ -16,8 +16,8 @@ export const commentType = defineType({
       type: 'string',
     }),
     defineField({
-      name: 'comment',
-      title: 'Comment',
+      name: 'reply',
+      title: 'Reply',
       type: 'text',
     }),
     defineField({
@@ -26,17 +26,11 @@ export const commentType = defineType({
       type: 'number',
       validation: Rule => Rule.min(0)
     }),
-    // defineField({
-    //   name: 'approved',
-    //   title: 'Approved',
-    //   type: 'boolean',
-    //   description: 'Approve comment to show on site',
-    // }),
     defineField({
-      name: 'blogPost',
-      title: 'Blog Post',
+      name: 'comment',
+      title: 'Comment',
       type: 'reference',
-      to: [{ type: 'blogPost' }],
+      to: [{ type: 'comment' }],
     }),
     defineField({
       name: 'publishedAt',

@@ -12,6 +12,18 @@ export const postType = defineType({
       validation: (rule) => rule.required(),
     }),
     defineField({
+      name: 'description',
+      title: 'Description',
+      type: 'string',
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
+      name: 'intro',
+      title: 'Intro',
+      type: 'string',
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
       name: 'slug',
       title: 'Slug',
       type: 'slug',
@@ -31,14 +43,8 @@ export const postType = defineType({
       initialValue: () => new Date().toISOString(),
     }),
     defineField({
-      name: 'categories',
-      title: 'Categories',
-      type: 'array',
-      of: [{ type: 'string' }],
-    }),
-    defineField({
-      name: 'types',
-      title: 'Types',
+      name: 'tags',
+      title: 'Tags',
       type: 'array',
       of: [{ type: 'string' }],
     }),
@@ -49,6 +55,12 @@ export const postType = defineType({
       options: { hotspot: true },
     }),
     defineField({
+      name: 'likes',
+      title: 'Likes',
+      type: 'number',
+      validation: Rule => Rule.min(0)
+    }),
+    defineField({
       name: 'body',
       title: 'Body',
       type: 'array',
@@ -56,12 +68,6 @@ export const postType = defineType({
         { type: 'block' },
         { type: 'image' },
       ],
-    }),
-    defineField({
-      name: 'comments',
-      title: 'Comments',
-      type: 'array',
-      of: [{ type: 'comment' }],
-    }),
+    })
   ],
 });
