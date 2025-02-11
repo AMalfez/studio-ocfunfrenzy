@@ -68,6 +68,18 @@ export const eventType = defineType({
       of: [{ type: 'string' }],
     }),
     defineField({
+      name: 'type',
+      title: 'Type',
+      type: 'array',
+      of: [{ type: 'string' }],
+    }),
+    defineField({
+      name: 'category',
+      title: 'Category',
+      type: 'array',
+      of: [{ type: 'string' }],
+    }),
+    defineField({
       name: 'mainImage',
       title: 'Main Image',
       type: 'image',
