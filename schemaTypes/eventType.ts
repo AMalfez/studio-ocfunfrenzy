@@ -35,6 +35,7 @@ export const eventType = defineType({
       title: 'Organizer',
       type: 'reference',
       to: [{ type: 'organizer' }],
+      validation: (rule) => rule.required(),
     }),
     defineField({
       name: 'publishedAt',
